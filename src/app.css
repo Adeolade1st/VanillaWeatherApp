@@ -1,4 +1,7 @@
-h1 {
-    text-align: center;
-    color: blue;
+.container{
+    border: solid 2px blue;
+    height: 300px;
+    margin-top: 20px;
+    width: 600px;
+    border-radius: 5px;
 }
