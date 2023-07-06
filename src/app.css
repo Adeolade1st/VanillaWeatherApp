@@ -5,3 +5,12 @@
     width: 600px;
     border-radius: 5px;
 }
+.form-control{
+    width: 300px;
+}
+
+
+
+.btn btn-primary{
+    display: flex;
+}
