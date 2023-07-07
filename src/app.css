@@ -18,6 +18,12 @@
     font-weight: 700;
     font-size: 50px;
     font-family: 'Roboto', sans-serif;
+}
+
+.githubLink {
+    text-align: center;
+    color: blue;
+}
     
 
 h1 {
