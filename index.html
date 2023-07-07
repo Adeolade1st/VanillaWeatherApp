@@ -9,35 +9,41 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/da7c354ffb.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="src/app.css" />
     <title>🌦Vanilla Weather App</title>
   </head>
   <body>
     <div class="container">
-      <div>
+      <form class="mb-3">
         <input
-          type="search"
-          placeholder="Type a city.."
           class="form-control"
-          id="city-input"
+          type="search"
+          placeholder="Search a City"
+          autofocus="on"
           autocomplete="off"
         />
-        <button type="button" class="btn btn-primary">Search</button>
+      </form>
+      <button class="btn btn-primary" type="submit">Search</button>
+      <h1>
+        New York
+        <img
+          src="http://openweathermap.org/img/wn/04d@2x.png"
+          alt="overcast clouds"
+          id="icon"
+          class="float-left"
+        />
+      </h1>
 
-        <h1>New York</h1>
-        <div>
-          <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="icon" />
-        </div>
-        <div class="row">
-          <div class="col">
-            <ul>
-              <li>Last updated: Wednesday 13:21</li>
-              <li>Mist</li>
-            </ul>
-          </div>
-          <div class="col">Humidity: 78%</div>
-          <div class="col">Wind: 11 km/h</div>
-        </div>
+      <div class="row">
+        <div class="col">Last updated: Thursday 10:51</div>
+        <div class="col">Overcast clouds</div>
+        <div class="col">28°C | °F</div>
+        <div class="col">Humidity: 65%</div>
+        <div class="col">Wind: 9 km/h</div>
       </div>
     </div>
 
