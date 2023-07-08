@@ -27,6 +27,11 @@ function formatDate(date) {
 function weatherCondition(response)
 {
 
+  let name = response.data.name;
+let nameElement = document.querySelector("#cityName");
+nameElement.innerHTML= `${name}`;
+console.log(response.data.name);
+
 let humidAir = response.data.main.humidity;
  let humid = document.querySelector("#humid");
  humid.innerHTML=`Humidity: ${humidAir}%`;
@@ -48,16 +53,34 @@ let temperature = Math.round(response.data.main.temp);
   console.log(response.data.weather[0].description);
 
 
+ let icons = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `${icons}`);
+
+ 
+
+}
+
+function convertTemperature(event){
+  event.preventDefault();
+  
+  let fareneiht = (temperature * 9/5)+ 32;
+  let fareneihtElement = document.querySelector("#temp");
+  fareneihtElement.innerHTML = `${fareneiht}`;
+
+
 }
 
 let dateElement = document.querySelector("#updateTime");
 let currentTime = new Date();
-dateElement.innerHTML = `Last updated: ${formatDate(currentTime)}`;
+dateElement.innerHTML = `Updated on: ${formatDate(currentTime)}`;
 
 function searchLocation(event){
     event.preventDefault();
-    let submitButton =  document.querySelector("#searchButton");
-    submitButton.innerHTML = cityName.value;
+  let city = citySearch;
+    let cityElement =  document.querySelector("#cityName").value;
+    cityElement.innerHTML = `${city}`;
+    console.log(citySearch);
 }
 
 let city = "Lagos";
@@ -68,3 +91,6 @@ axios.get(apiLink).then(weatherCondition);
 
 let form = document.querySelector("#searchButton");
 form.addEventListener("submit", searchLocation);
+
+let degree = document.querySelector("#fahrenheit");
+degree.addEventListener("click", convertTemperature);

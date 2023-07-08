@@ -18,6 +18,9 @@
 
 .col-3 {
     color: #1CA2E3;
+    text-transform: capitalize;
+        font-family: 'Kalam', cursive;
+        
 }
 
 
@@ -26,6 +29,8 @@
     font-size: 50px;
     font-family: 'Roboto', sans-serif;
     color: #1CA2E3;
+    font-family: 'Kalam', cursive;
+        
 }
 
 .githubLink {
@@ -39,9 +44,13 @@ h1 {
         margin-top: 10px;
         margin-bottom: 10px;
         color: #1CA2E3;
+        font-family: 'Kalam', cursive;
 }
 
 body{
 background: linear-gradient(181.2deg, rgb(181, 239, 249) 10.5%, rgb(254, 254, 254) 86.8%);
 
 } 
+footer {
+    text-decoration: none;
+}
