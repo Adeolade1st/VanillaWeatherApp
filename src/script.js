@@ -1,12 +1,70 @@
+function formatDate(date) {
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let dayIndex = date.getDay();
+  let days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thur",
+    "Fri",
+    "Sat"
+  ];
+  let day = days[dayIndex];
+
+  return `${day} ${hours}:${minutes}`;
+}
+
 
 function weatherCondition(response)
 {
- let humidity = document.querySelector("#humid");
- humidity.inneHTML = "response.data.main.humidity";
-console.log(response.data);
+
+let humidAir = response.data.main.humidity;
+ let humid = document.querySelector("#humid");
+ humid.innerHTML=`Humidity: ${humidAir}%`;
+console.log(response.data.main.humidity);
+
+let temperature = Math.round(response.data.main.temp);
+  let temps = document.querySelector("#temp");
+  temps.innerHTML = `${temperature}`;
+  console.log(response.data);
+
+  let wind = Math.round(response.data.wind.speed);
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML= `Wind: ${wind}km/h`;
+  console.log(response.data.wind.speed);
+
+  let description = response.data.weather[0].description;
+  let describeElement = document.querySelector("#description");
+  describeElement.innerHTML= `${description}`;
+  console.log(response.data.weather[0].description);
+
+
+}
+
+let dateElement = document.querySelector("#updateTime");
+let currentTime = new Date();
+dateElement.innerHTML = `Last updated: ${formatDate(currentTime)}`;
+
+function searchLocation(event){
+    event.preventDefault();
+    let submitButton =  document.querySelector("#searchButton");
+    submitButton.innerHTML = cityName.value;
 }
 
 let city = "Lagos";
 let apiKey = "1cb6c613345a0d8b9e863edd3e2cbc11";
-let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units={metric}`;
+let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiLink).then(weatherCondition);
+
+
+let form = document.querySelector("#searchButton");
+form.addEventListener("submit", searchLocation);

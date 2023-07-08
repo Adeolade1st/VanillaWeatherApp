@@ -1,25 +1,31 @@
 
 .container{
-    border: solid 2px rgb(179, 16, 97);
-    height: 300px;
+    border: solid 2px #25AAD5;
+    height: 350px;
     margin-top: 30px;
-    width: 600px;
+    width: 750px;
     border-radius: 5px;
-    padding-left: 13px;
+    padding-left: 20px;
     padding-right: auto;
 }
 
 
 .mb-3 {
-    width: 240px;
+    width: 300px;
     
     
 }
+
+.col-3 {
+    color: #1CA2E3;
+}
+
 
 .degree {
     font-weight: 700;
     font-size: 50px;
     font-family: 'Roboto', sans-serif;
+    color: #1CA2E3;
 }
 
 .githubLink {
@@ -32,4 +38,10 @@ h1 {
     text-align: center;
         margin-top: 10px;
         margin-bottom: 10px;
+        color: #1CA2E3;
 }
+
+body{
+background: linear-gradient(181.2deg, rgb(181, 239, 249) 10.5%, rgb(254, 254, 254) 86.8%);
+
+} 
