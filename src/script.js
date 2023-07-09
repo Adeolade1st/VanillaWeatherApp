@@ -75,22 +75,30 @@ let dateElement = document.querySelector("#updateTime");
 let currentTime = new Date();
 dateElement.innerHTML = `Updated on: ${formatDate(currentTime)}`;
 
-function searchLocation(event){
-    event.preventDefault();
-  let city = citySearch;
-    let cityElement =  document.querySelector("#cityName").value;
-    cityElement.innerHTML = `${city}`;
-    console.log(citySearch);
-}
 
-let city = "Lagos";
+function search(city){
+
 let apiKey = "1cb6c613345a0d8b9e863edd3e2cbc11";
 let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiLink).then(weatherCondition);
+}
+
+function searchLocation(event) {
+  event.preventDefault();
+  let cityName = document.querySelector("#citySearch").value;
+  search(cityName);
+//console.log(cityName.value);
+}
 
 
-let form = document.querySelector("#searchButton");
+search("Lagos");
+
+
+
+
+
+let form = document.querySelector("#searchForm");
 form.addEventListener("submit", searchLocation);
 
-let degree = document.querySelector("#fahrenheit");
-degree.addEventListener("click", convertTemperature);
+//let degree = document.querySelector("#fahrenheit");
+//degree.addEventListener("click", convertTemperature);
