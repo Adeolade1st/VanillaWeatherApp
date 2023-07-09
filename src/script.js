@@ -57,17 +57,7 @@ let temperature = Math.round(response.data.main.temp);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `${icons}`);
 
- 
-
-}
-
-function convertTemperature(event){
-  event.preventDefault();
-  
-  let fareneiht = (temperature * 9/5)+ 32;
-  let fareneihtElement = document.querySelector("#temp");
-  fareneihtElement.innerHTML = `${fareneiht}`;
-
+  fareneihtTemperature = temperature;
 
 }
 
@@ -87,18 +77,33 @@ function searchLocation(event) {
   event.preventDefault();
   let cityName = document.querySelector("#citySearch").value;
   search(cityName);
-//console.log(cityName.value);
+}
+
+function changeTofahrenheitTemp(event){
+  event.preventDefault();
+  let fareneihtTemp = Math.round(fareneihtTemperature * 9/5) + 32 
+  let h1 = document.querySelector("#temp");
+  h1.innerHTML =`${fareneihtTemp}`;
+
+}
+
+let fareneihtTemperature = "null";
+
+function changeToCelcius(event){
+  event.preventDefault();
+  let celciusClick = document.querySelector("#temp");
+  celciusClick.innerHTML=`${fareneihtTemperature}`;
 }
 
 
-search("Lagos");
+let fareneihtTemp = document.querySelector("#fahrenheit");
+fareneihtTemp.addEventListener("click", changeTofahrenheitTemp);
 
-
-
+let celciusTemp = document.querySelector("#celcius");
+celciusTemp.addEventListener("click", changeToCelcius);
 
 
 let form = document.querySelector("#searchForm");
 form.addEventListener("submit", searchLocation);
 
-//let degree = document.querySelector("#fahrenheit");
-//degree.addEventListener("click", convertTemperature);
+search("Lagos");
