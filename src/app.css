@@ -45,6 +45,10 @@ a {
     color: #1CA2E3;
 }
 
+a:hover {
+    color: #0B5ED7;
+    text-decoration: #1CA2E3;
+}
 
 h1 {
     text-align: center;
