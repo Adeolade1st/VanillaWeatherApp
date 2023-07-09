@@ -93,6 +93,7 @@ function changeToCelcius(event){
   event.preventDefault();
   let celciusClick = document.querySelector("#temp");
   celciusClick.innerHTML=`${fareneihtTemperature}`;
+
 }
 
 
