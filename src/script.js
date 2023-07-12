@@ -23,10 +23,47 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function weatherForecast(){
+  let weatherForecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Wed","Thur","Fri","Sat","Sun","Mon"];
+  days.forEach(function(day){
+
+  forecastHTML = forecastHTML +
+
+    `   
+          <div class="col-2">
+            <div class="day-forecast">${day}</div>
+            
+            <div class="image" >
+              <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt=""
+               />
+            </div>
+             
+          <div class="max-temp">
+             40°
+             <span class="min-temp">32°</span>
+          
+           
+        
+        
+        </div>
+
+
+          </div>`;
+
+  });
+
+         
+          forecastHTML = forecastHTML + `</div>`;
+          weatherForecastElement.innerHTML = forecastHTML;
+}
 
 function weatherCondition(response)
 {
-
   let name = response.data.name;
 let nameElement = document.querySelector("#cityName");
 nameElement.innerHTML= `${name}`;
@@ -60,6 +97,7 @@ let temperature = Math.round(response.data.main.temp);
   fareneihtTemperature = temperature;
 
 }
+
 
 let dateElement = document.querySelector("#updateTime");
 let currentTime = new Date();
@@ -108,3 +146,4 @@ let form = document.querySelector("#searchForm");
 form.addEventListener("submit", searchLocation);
 
 search("Lagos");
+weatherForecast();

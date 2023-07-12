@@ -1,12 +1,13 @@
 
 .container{
     border: solid 2px #25AAD5;
-    height: 350px;
+    height: 450px;
     margin-top: 30px;
-    width: 750px;
+    width: 900px;
     border-radius: 5px;
     padding-left: 20px;
     padding-right: auto;
+    
 }
 
 
@@ -36,9 +37,32 @@
 .githubLink {
     text-align: center;
     color: #1CA2E3;
-   
-    
-}  
+
+}
+
+.col-2 {
+    margin-top: 30px;
+    text-align: center;
+
+}
+
+.image{
+    text-align: left;
+}
+
+.max-temp {
+    color: yellow;
+}
+.min-temp {
+    color: yellow;
+    opacity: 0.5;
+}
+
+.day-forecast {
+    color: #1CA2E3;
+        font-family: 'Kalam', cursive;
+        opacity: 0.6;
+}
 
 a {
     text-decoration: none;
@@ -64,4 +88,5 @@ background: linear-gradient(181.2deg, rgb(181, 239, 249) 10.5%, rgb(254, 254, 25
 } 
 footer {
     text-decoration: none;
+    font-family: 'Kalam', cursive;
 }
