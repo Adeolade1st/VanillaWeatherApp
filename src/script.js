@@ -60,7 +60,24 @@ function weatherForecast(){
          
           forecastHTML = forecastHTML + `</div>`;
           weatherForecastElement.innerHTML = forecastHTML;
+          
 }
+
+
+function getForecast(coordinates){
+  console.log(coordinates);
+  let apiKey = "fe1483f743b581b5520a1b725af03a49";
+  let apiLink = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiLink).then(weatherForecast);
+
+
+
+  console.log(apiLink);
+
+}
+
+
+
 
 function weatherCondition(response)
 {
@@ -96,8 +113,10 @@ let temperature = Math.round(response.data.main.temp);
 
   fareneihtTemperature = temperature;
 
-}
+  getForecast(response.data.coord);
 
+}
+ 
 
 let dateElement = document.querySelector("#updateTime");
 let currentTime = new Date();
@@ -146,4 +165,6 @@ let form = document.querySelector("#searchForm");
 form.addEventListener("submit", searchLocation);
 
 search("Lagos");
-weatherForecast();
+
+
+
