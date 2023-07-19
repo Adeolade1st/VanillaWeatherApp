@@ -151,31 +151,6 @@ function searchLocation(event) {
   search(cityName);
 }
 
-function changeTofahrenheitTemp(event){
-  event.preventDefault();
-  let fareneihtTemp = Math.round(fareneihtTemperature * 9/5) + 32 
-  let h1 = document.querySelector("#temp");
-  h1.innerHTML =`${fareneihtTemp}`;
-
-}
-
-let fareneihtTemperature = "null";
-
-function changeToCelcius(event){
-  event.preventDefault();
-  let celciusClick = document.querySelector("#temp");
-  celciusClick.innerHTML=`${fareneihtTemperature}`;
-
-}
-
-
-let fareneihtTemp = document.querySelector("#fahrenheit");
-fareneihtTemp.addEventListener("click", changeTofahrenheitTemp);
-
-let celciusTemp = document.querySelector("#celcius");
-celciusTemp.addEventListener("click", changeToCelcius);
-
-
 let form = document.querySelector("#searchForm");
 form.addEventListener("submit", searchLocation);
 

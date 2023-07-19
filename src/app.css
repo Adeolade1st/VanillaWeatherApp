@@ -7,6 +7,7 @@
     border-radius: 5px;
     padding-left: 20px;
     padding-right: auto;
+    box-shadow: 5px 5px 2px 2px #1CA2E3;
     
 }
 
@@ -64,8 +65,13 @@
         opacity: 0.6;
 }
 
+.cel {
+    color:#1CA2E3;
+    display: inline-block;
+    font-size: 20px;
+}
 a {
-    text-decoration: none;
+    
     color: #1CA2E3;
 }
 
