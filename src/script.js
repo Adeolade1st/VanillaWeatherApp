@@ -23,17 +23,12 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function formatDay(timestamp){
-  
-  let date =  new Date(timestamp * 1000);
-  let day = date.getDate();
-  let days = ["Sun","Mon","Tues","Wed","Thur","Fri"];
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  
   return days[day];
-
-
-
 }
 
 function weatherForecast(response){
@@ -43,7 +38,9 @@ function weatherForecast(response){
   let forecastHTML = `<div class="row">`;
 
  
-  forecast.forEach(function(forecastDay){
+  forecast.forEach(function(forecastDay, index){
+
+    if(index < 6) {
   
 
   forecastHTML = forecastHTML +
@@ -60,8 +57,8 @@ function weatherForecast(response){
             </div>
              
           <div class="max-temp">
-             ${forecastDay.temp.max}°
-             <span class="min-temp">${forecastDay.temp.min}°</span>
+             ${Math.round(forecastDay.temp.max)}°
+             <span class="min-temp">${Math.round(forecastDay.temp.min)}°</span>
           
            
         
@@ -70,6 +67,7 @@ function weatherForecast(response){
 
 
           </div>`;
+  }
     
 
   });
