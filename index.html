@@ -21,76 +21,78 @@
     <title>🌦Vanilla Weather App</title>
   </head>
   <body>
-    <div class="container">
-      <div class="weather-app">
-        <h1 id="cityName">Lagos</h1>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <form class="mb-3" id="searchForm">
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Search a City"
-              autofocus="on"
-              autocomplete="off"
-              id="citySearch"
+    <div class="container-sm">
+      <div class="container">
+        <div class="weather-app">
+          <h1 id="cityName">Lagos</h1>
+        </div>
+        <div class="row">
+          <div class="col-sm">
+            <form class="mb-3" id="searchForm">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Search a City"
+                autofocus="on"
+                autocomplete="off"
+                id="citySearch"
+              />
+            </form>
+          </div>
+          <div class="col-3">
+            <button class="btn btn-primary" type="submit" id="searchButton">
+              Search
+            </button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <img
+              src="http://openweathermap.org/img/wn/04d@2x.png"
+              alt="overcast clouds"
+              id="icon"
+              class="float-left"
             />
-          </form>
+            <strong class="degree" id="temp"></strong>
+            <div class="cel">°C</div>
+          </div>
         </div>
-        <div class="col-3">
-          <button class="btn btn-primary" type="submit" id="searchButton">
-            Search
-          </button>
+
+        <div class="row">
+          <div class="col-3" id="updateTime">
+            Updated: Thur 10:51
+            <i class="fa-regular fa-pen-to-square fa-spin-pulse"></i>
+          </div>
+          <div class="col-3" id="description">
+            Overcast: clouds <i class="fa-solid fa-cloud fa-fade"></i>
+          </div>
+          <div class="col-3" id="humid">
+            Humidity: 65% <i class="fa-solid fa-droplet fa-bounce"></i>
+          </div>
+          <div class="col-3" id="wind">
+            Wind: 9 km/h <i class="fa-solid fa-wind fa-fade"></i>
+          </div>
         </div>
+
+        <div class="weather-forecast" id="forecast"></div>
+        <br />
+        <br />
+
+        <footer class="githubLink" id="linkRemoved">
+          This Project Was Coded by
+          <a
+            href="https://github.com/Adeolade1st/VanillaWeatherApp"
+            target="_blank"
+          >
+            Ilavbare Adeola
+          </a>
+          and
+          <a href="https://adeola-ilavbare-vanilaweatherapp.onrender.com/">
+            Hosted on render.</a
+          >
+        </footer>
       </div>
-
-      <div class="row">
-        <div class="col">
-          <img
-            src="http://openweathermap.org/img/wn/04d@2x.png"
-            alt="overcast clouds"
-            id="icon"
-            class="float-left"
-          />
-          <strong class="degree" id="temp"></strong>
-          <div class="cel">°C</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3" id="updateTime">
-          Updated: Thur 10:51
-          <i class="fa-regular fa-pen-to-square fa-spin-pulse"></i>
-        </div>
-        <div class="col-3" id="description">
-          Overcast: clouds <i class="fa-solid fa-cloud fa-fade"></i>
-        </div>
-        <div class="col-3" id="humid">
-          Humidity: 65% <i class="fa-solid fa-droplet fa-bounce"></i>
-        </div>
-        <div class="col-3" id="wind">
-          Wind: 9 km/h <i class="fa-solid fa-wind fa-fade"></i>
-        </div>
-      </div>
-
-      <div class="weather-forecast" id="forecast"></div>
-      <br />
-      <br />
-
-      <footer class="githubLink" id="linkRemoved">
-        This Project Was Coded by
-        <a
-          href="https://github.com/Adeolade1st/VanillaWeatherApp"
-          target="_blank"
-        >
-          Ilavbare Adeola
-        </a>
-        and
-        <a href="https://adeola-ilavbare-vanilaweatherapp.onrender.com/">
-          Hosted on render.</a
-        >
-      </footer>
     </div>
 
     <script src="src/script.js"></script>

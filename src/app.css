@@ -1,3 +1,11 @@
+@media (max-width: 900px){
+
+    .col-3{
+
+          display: none;
+    }
+
+}
 
 .container{
     border: solid 2px #25AAD5;
