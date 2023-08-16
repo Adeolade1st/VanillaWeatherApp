@@ -155,6 +155,3 @@ let form = document.querySelector("#searchForm");
 form.addEventListener("submit", searchLocation);
 
 search("Lagos");
-
-
-
